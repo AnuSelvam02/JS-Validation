@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="signin">
+
+        <fieldset style="width: fit-content;border-radius:20px">
+            <legend><h1>SIGN IN</h1></legend>
+            <table>
+                <tr>
+                    <td> First name : </td>
+                    <td><input type="text" name="" id=""></td>
+                </tr>
+                <tr>
+                    <td> Last name :</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>*Email :</td>
+                    <td><input type="text" id="eml"></td>
+                </tr>
+                <tr>
+                    <td>*Mobile :</td>
+                    <td><input type="text" id="mob"></td>
+                </tr>
+                <tr>
+                    <td>*Username :</td>
+                    <td><input type="text" id="uname"></td>
+                </tr>
+                <tr>
+                    <td>*Password :</td>
+                    <td><input type="text" id="pswd"></td>
+                </tr>
+                <tr>
+                    <td>*Confirm Password :</td>
+                    <td><input type="text" id="cpswd"></td>
+                </tr>
+            </table>
+            <button type="submit" onclick=" return btn()" id="sub" onclick="f2()">Submit</button>
+
+        </fieldset>
+
+    </form>
+
+
+    <script>
+        function btn(){
+            let mail = document.getElementById('eml').value
+            let mobile = document.getElementById('mob').value
+            let username = document.getElementById('uname').value
+            let Password = document.getElementById('pswd').value
+            let conpass = document.getElementById('cpswd').value 
+
+
+            if(mail.indexOf('@') == 0 || mail === '' || mail === null){
+                eml.style.border ='2px red solid'
+                return false
+            }
+            else if(mail !== mail.endsWith('.com') && (mail.ensdWith(".co")) && (mail.ensdWith(".in"))){
+                eml.style.border ='2px red solid'
+                return false
+
+            }
+            if (mobile === '' || mobile === null){
+                mob.style.border ='2px red solid'
+                return false
+
+            }
+            else if(isNaN(mobile)){
+               mob.style.border ='2px red solid'
+               return false
+            }
+            else if(mobile.length != 10){
+                mob.style.border ='2px red solid'
+                return false
+            }
+            else if(username === '' || username === null){
+                uname.style.border ='2px red solid'
+                return false
+            }
+            else if(Password !== conpass){
+                cpswd.style.border ='2px red solid'
+                return false
+            }
+
+            else{
+                eml.style.border ='2px green solid'
+                mob.style.border ='2px green solid'
+
+                return true
+            }
+
+        }
+    </script>
+
+
+
+<br><br>
+<form action="" id="login" style="display: none;">
+    <fieldset style="width: fit-content;border-radius:20px">
+        <legend><h1> LOG IN</h1></legend>
+    <table>
+        <tr>
+            <td>Username : </td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>Password :</td>
+            <td><input type="password"></td>
+        </tr>
+        
+    </table>
+    <button type="submit" >Log In</button>
+</fieldset>
+</form>
+
+
+<script>
+    function f2(){
+        let val = document.getElementById("sub").textContent
+        document.write(val)
+        if (val === 'Submit'){
+            login.style.display = 'none'
+            signin.style.display = 'block'
+        }
+        else{
+            signin.style.display = 'block'
+            login.style.display = 'none'
+        }
+    }
+
+   
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
